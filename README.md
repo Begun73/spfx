@@ -12,9 +12,9 @@ Short summary on functionality and used technologies.
 
 ## Что нужно чтобы работало
 
--node js 10.x.x (Версии Node.js v9.x, v11.x и v12.x в настоящее время не поддерживаются при разработке SharePoint Framework)
--npm install gulp yo @microsoft/generator-sharepoint --global (Коплект всего необходимого)
--gulp trust-dev-cert (Чтобы не мучали сертификаты)
+- node js 10.x.x (Версии Node.js v9.x, v11.x и v12.x в настоящее время не поддерживаются при разработке SharePoint Framework)
+- npm install gulp yo @microsoft/generator-sharepoint --global (Коплект всего необходимого)
+- gulp trust-dev-cert (Чтобы не мучали сертификаты)
 
 ## Build options (inner false)
 
