@@ -1,0 +1,98 @@
+#preloader{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: none;
+}
+
+.card {
+  height: 350px;
+  overflow: hidden;
+  cursor:"pointer";
+}
+.o365cs-base .o365sx-button {
+  background-color: #9b59b6!important;
+}
+.o365sx-navbar {
+  background-color: #9b59b6!important;
+}
+.o365cs-base .o365sx-appName, .o365cs-base .o365sx-appName:visited {
+  background-color: #9b59b6!important;
+}
+.kx_an_9f38462c.bl_an_9f38462c {
+  width: 90px;
+  margin: 0 auto;
+  border-bottom: 2px solid rgb(135, 100, 184);
+  padding-bottom: 5px;
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  cursor:pointer;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 0!important;
+}
+.num{
+  color:#ccc;
+  font-size:11px;
+}
+.card_wrapper{
+  padding-bottom: 20px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card-img-top{
+  border-radius: 0!important;
+}
+.button_wrapper button{
+  border-radius: 0!important;
+  background-color:#9b59b6;
+  border-color:#9b59b6;
+  font-size: 13px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.button_wrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+}
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+  background-color: #8e44ad!important;
+  border-color: #8e44ad!important;
+}
+.button_wrapper_materialize{
+  background-color: #8e44ad!important;
+}
+[type=search] {
+  border: none!important;
+  height: inherit!important;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label,.input-field textarea:focus + label {
+  color: #8e44ad!important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus,.input-field textarea:focus {
+  border-bottom: 1px solid #8e44ad!important;
+  box-shadow: 0 1px 0 0 #8e44ad!important;
+}
+/* valid color */
+.input-field input[type=text].valid,.input-field textarea.valid {
+  border-bottom: 1px solid  #8e44ad!important;
+  box-shadow: 0 1px 0 0  #8e44ad!important;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid rgb(248, 88, 88);
+  box-shadow: 0 1px 0 0  rgb(248, 88, 88);
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #8e44ad!important;
+}
