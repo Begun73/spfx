@@ -13,10 +13,13 @@
 ## Build options (inner false)
 
 >Собираем вебчасть с файлами на локальной тачке
+```sh
 gulp package-solution 
-
+```
 >Запускаем сервер для подгрузки файлов
+```sh
 gulp serve --nobrowser
+```
 
 ## Build options (inner true)
 
@@ -28,5 +31,7 @@ gulp package-solution --ship
 ```
 
 ## Стоковый набор запуска
-  - **npm install**
-  - **gulp serve**
+```sh
+npm install
+gulp serve
+```
