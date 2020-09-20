@@ -1,10 +1,4 @@
-# test
-
-## Summary
-
-Short summary on functionality and used technologies.
-
-[picture of the solution in action, if possible]
+# SPFX view/edit
 
 ## Used SharePoint Framework Version
 
