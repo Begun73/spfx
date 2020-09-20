@@ -51,6 +51,7 @@ export default class Edit extends React.Component<IEditProps, {}> {
   componentDidMount = async () =>{
     M.AutoInit();
     if (this.state.id){
+      
       try{
         const item = await sp.web.lists.getByTitle("Список").items.getById(+this.state.id).select("Title,Id,Description,Num").get();
         this.setState({item,isLoading:false});
