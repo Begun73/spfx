@@ -112,7 +112,7 @@ export default class Edit extends React.Component<IEditProps, {}> {
                 <TextInput error="Заполните обязательное поле" inputClassName={this.state.item.Title.length == 0 && this.state.error ? "invalid" : ""} id="Title" s={12} label="Название" defaultValue={this.state.item.Title} value={this.state.item.Title} onChange={(e)=>this.onChangeValue(e)}/>
               </div>
               <div className="input-field col s6">
-                <TextInput error="Заполните обязательное поле" id="Num" inputClassName={this.state.item.Num.length == 0 && this.state.error ? "invalid" : ""} s={12} label="Код" defaultValue={this.state.item.Num} onChange={(e)=>this.onChangeValue(e)}/>
+                <TextInput error="Заполните обязательное поле" type="Number" id="Num" inputClassName={this.state.item.Num.length == 0 && this.state.error ? "invalid" : ""} s={12} label="Код" defaultValue={this.state.item.Num} onChange={(e)=>this.onChangeValue(e)}/>
               </div>
             </div>
           </div>
