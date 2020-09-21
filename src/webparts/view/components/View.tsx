@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import '../../../css/style.css?v=2';
+import '../../../css/style.css?v=1';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as cap from "./images/cap.png";
 import { IViewProps } from './IViewProps';
@@ -14,12 +14,24 @@ export default class View extends React.Component<IViewProps, {}> {
     list:[],
     error:null
   }
+  /**
+   * Хендлер нажатия на карточку элемента списка
+   * @param {number} id ID элемента списка 
+   */
   openItem = id =>{
     window.open("/SitePages/Edit-Add-page.aspx?edit="+id, "_blank");
   }
+  /**
+   * Хендлер нажатия на кнопку "Добавить элемент"
+   */
   addItem = () =>{
     window.open("/SitePages/Edit-Add-page.aspx", "_blank");
   }
+  /**
+   * Создаем карточку элемента списка
+   * @param {Object} item Объект текущего элемента списка
+   * @param {number} key Индекс
+   */
   getItem = (item,key) =>{
     return (
       <div className="col-sm-3 card_wrapper">
@@ -35,6 +47,9 @@ export default class View extends React.Component<IViewProps, {}> {
     )
     
   }
+  /**
+   * Метод жищненного цикла реакт(тут асинхронщина должна быть)
+   */
   componentDidMount = async () =>{
     try{
       var list = await sp.web.lists.getByTitle("Список").items.getAll();
@@ -54,7 +69,7 @@ export default class View extends React.Component<IViewProps, {}> {
       :
       <div className="view_wrapper">
         <div className="button_wrapper">
-          <button type="button" className="btn btn-primary btn-lg" onClick={this.addItem}>Добавить эллемент</button>
+          <button type="button" className="btn btn-primary btn-lg" onClick={this.addItem}>Добавить элемент</button>
         </div>
         <div className="list">
           <div className="row">

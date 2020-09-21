@@ -35,6 +35,12 @@
   overflow: hidden;
   border-radius: 0!important;
 }
+.custom_saving{
+    position: absolute;
+    top: 91px;
+    left: 50%;
+    margin-left: -42px;
+}
 .num{
   color:#ccc;
   font-size:11px;

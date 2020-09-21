@@ -10,13 +10,16 @@ import { sp } from "@pnp/sp/presets/all";
 import {Ripple} from 'react-preloaders';
 
 export default class Edit extends React.Component<IEditProps, {}> {
+  /**
+   * Метод получения параметров url(работает во всех браузерах)
+   * @param {string} name Название параметра
+   */
   getParameterByName = name => {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(window.location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-
   state={
     isLoading:true,
     item:null,
@@ -24,34 +27,63 @@ export default class Edit extends React.Component<IEditProps, {}> {
     error:null,
     isSaving:false
   }
+  /**
+   * Хендлер измения полей
+   * @param {Object} e текущий элемент который изменяем
+   */
   onChangeValue = e =>{
     let item = this.state.item;
     item[e.target.id]=e.target.value;
     this.setState({item});
   }
+  /**
+   * Валаидация полей
+   */
   validation = () =>{
     let error = false;
     if (this.state.item.Title.length == 0 || this.state.item.Num.length == 0 || this.state.item.Description.length == 0){
-      this.setState({error:true});
+      this.setState({error:true,isSaving:false});
       return false;
     }else{
       return true;
     }
   }
-  onSave = () =>{
+  /**
+   * Метод сохранения текущего элемента
+   */
+  onSave = async () =>{
+    this.setState({isSaving:true});
     if (this.validation()){
-
+      try{
+        await sp.web.lists.getByTitle("Список").items.getById(+this.state.id).update(this.state.item);
+        window.location.href="/"
+      }catch{
+        this.setState({isSaving:false});
+      }
     }
   }
-  onAdd = () =>{
+  /**
+   * Метод добавления элемента в список
+   */
+  onAdd = async () =>{
+    this.setState({isSaving:true});
     if (this.validation()){
-
+      try{
+        await sp.web.lists.getByTitle("Список").items.add(this.state.item);
+        window.location.href="/"
+      }catch{
+        this.setState({isSaving:false});
+      }
     }
+    
   }
+  /**
+   * Метод жищненного цикла реакт(тут асинхронщина должна быть)
+   */
   componentDidMount = async () =>{
     M.AutoInit();
+    //Если в url есть параметр id элемента из списка, получаем этот итем из списка. Иначе компонент работает на создание эелемента.
     if (this.state.id){
-      
       try{
         const item = await sp.web.lists.getByTitle("Список").items.getById(+this.state.id).select("Title,Id,Description,Num").get();
         this.setState({item,isLoading:false});
@@ -101,6 +133,12 @@ export default class Edit extends React.Component<IEditProps, {}> {
               </Button>}
           </div>
         </div>
+        {
+          this.state.isSaving &&
+          <div className="custom_saving">
+            <Ripple/>
+          </div>
+        }
       </div>
     );
   }
