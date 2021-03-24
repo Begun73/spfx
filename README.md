@@ -1,8 +1,8 @@
 # SPFX view/edit
 
-## Used SharePoint Framework Version
+## Used SharePoint Framework Version and React
 
-![version](https://img.shields.io/badge/version-1.11-green.svg)
+Модуль для SPO. Редактирование, создание и отображение элементов списка.
 
 ## Что нужно чтобы работало
 
